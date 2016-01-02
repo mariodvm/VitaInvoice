@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="VitaInvoice.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VitaInvoice"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="MainPage_OnLoaded">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Add" Label="Add Invoice" Click="AddInvoiceButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="White" Grid.Row="0" x:Name="TitleBar">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="BackButtonGrid">
+                <Button x:Name="BackButton" BorderThickness="0" Click="BackButton_OnClick" Height="40">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="" FontSize="14"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1" x:Name="MainTitleBar" Background="Transparent">
+                <TextBlock Text="IntellInvoice" VerticalAlignment="Center" 
+                           FontSize="12" FontFamily="Segoe UI" FontWeight="Normal" Margin="10,0"/>
+            </Grid>
+            <Grid Grid.Column="2" x:Name="RightMask"/>
+        </Grid>
+
+    </Grid>
+</Page>
